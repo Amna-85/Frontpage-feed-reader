@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontpage | Your personalised tech reading dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Design tokens (copy starter/tokens.css from the challenge next to this file) -->
+  <link rel="stylesheet" href="tokens.css">
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <a href="#" class="brand"><span class="brand__mark">F</span> Frontpage</a>
+
+    <nav class="tabs" aria-label="Views">
+      <button class="tab is-active" data-view="feed" type="button">Feed</button>
+      <button class="tab" data-view="digest" type="button">Digest</button>
+      <button class="tab" data-view="discover" type="button">Discover</button>
+    </nav>
+
+    <div class="topbar__right">
+      <label class="search">
+        <span class="sr-only">Search articles</span>
+        <input id="search" type="search" placeholder="Search articles..." autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+      <button class="icon-btn" id="add-feed" type="button" aria-label="Add feed">+</button>
+      <span class="avatar" aria-label="Guest">G</span>
+    </div>
+  </header>
+
+  <div class="shell">
+    <!-- Sidebar (filled by script.js) -->
+    <aside class="sidebar" id="sidebar" aria-label="Feeds"></aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <div class="toolbar">
+        <h1 id="title">All Items <small id="count"></small></h1>
+
+        <div class="toolbar__actions">
+          <div class="seg" role="group" aria-label="Layout">
+            <button type="button" data-layout="list" aria-label="List layout" aria-pressed="true">☰</button>
+            <button type="button" data-layout="grid" aria-label="Grid layout" aria-pressed="false">▦</button>
+            <button type="button" data-layout="compact" aria-label="Compact layout" aria-pressed="false">≡</button>
+          </div>
+          <button type="button" class="btn" id="sort">Newest</button>
+          <button type="button" class="btn" id="refresh">Refresh</button>
+          <button type="button" class="btn" id="mark-all">Mark all read</button>
+        </div>
+      </div>
+
+      <p class="banner" id="banner" hidden></p>
+
+      <!-- Article list (filled by script.js) -->
+      <div id="list" class="list" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <!-- Your script -->
+  <script src="script.js"></script>
+</body>
+</html>
